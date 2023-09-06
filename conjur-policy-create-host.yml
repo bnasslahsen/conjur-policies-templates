@@ -1,0 +1,10 @@
+# loaded at /data
+# referenced in Flows datastore by End2End-Provision flow as:
+#  	conjur-policy-create-identity
+---
+- !host
+  id: {{ HOST_NAME }}
+  annotations:
+    authn-jwt/{{ CONJUR_AUTHENTICATOR_ID }}/kubernetes.io/namespace: {{ APP_NAMESPACE }}
+    authn-jwt/{{ CONJUR_AUTHENTICATOR_ID }}/kubernetes.io/serviceaccount/name: {{ SERVICE_ACCOUNT }}
+    authn/api-key: true
